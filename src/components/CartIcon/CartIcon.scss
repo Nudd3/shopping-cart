@@ -1,0 +1,16 @@
+.cart-icon {
+  // border: 2px solid red;
+  position: relative;
+}
+
+.cart-icon-item-counter {
+  position: absolute;
+  font-weight: bold;
+  left: 18px;
+  top: -9px;
+}
+
+svg {
+  height: 40px;
+  width: 40px;
+}
