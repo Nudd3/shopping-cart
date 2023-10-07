@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import helperMethods from './utils/utils'
+import Header from './components/Header';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <h1>Hello from app</h1>
     </>
   )

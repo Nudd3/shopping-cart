@@ -1,0 +1,41 @@
+.header {
+  height: 90px;
+  background-color: #fff;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  padding-left: 30px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 30px;
+}
+
+.nav-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 2em;
+  font-weight: bold;
+  
+
+  li {
+
+    font-size: 1rem;
+    font-size: 18px;
+    color: #343536;
+
+  }
+}
