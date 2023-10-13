@@ -20,7 +20,9 @@ function App() {
   return (
     <>
       <Header />
-      <ProductList storeItems={storeItems} />
+      <div className="content">
+        <ProductList storeItems={storeItems} />
+      </div>
     </>
   )
 }

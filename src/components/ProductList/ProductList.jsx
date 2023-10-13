@@ -4,7 +4,7 @@ import './ProductList.scss';
 
 const ProductList = ({ storeItems }) => {
   return (
-    <>
+    <div className='product-list'>
       <div className="toolbar">
         <ul>
           <li>Sort by: </li>
@@ -17,7 +17,7 @@ const ProductList = ({ storeItems }) => {
           <Product key={item.id} item={item} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
