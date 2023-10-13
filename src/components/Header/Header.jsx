@@ -10,13 +10,25 @@ const Header = () => {
       </div>
       <div className="header-nav">
         <nav>
-          <ul className='nav-list'>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Store</li>
-          </ul>
+          <div className='menu-toggle'>
+            <input type="checkbox" className=''/>
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul className='menu'>
+              <a href="">
+                <li>About</li>
+              </a>
+              <a href="">
+                <li>Contact</li>
+              </a>
+              <a href="">
+                <li>Store</li>
+              </a>
+            </ul>
+          </div>
         </nav>
-        <CartIcon />
+        <CartIcon />  
       </div>
     </header>
   )

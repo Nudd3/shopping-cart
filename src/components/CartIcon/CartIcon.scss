@@ -1,16 +1,41 @@
 .cart-icon {
   // border: 2px solid red;
   position: relative;
+  cursor: pointer;
+
+  .cart-icon-item-counter {
+    transition: top 0.5s ease-in-out;
+  }
+
+  &:hover {
+    .cart-icon-item-counter {
+      top: 13px;
+    }
+  }
 }
+
+@keyframes slide-in {
+  70% {
+    margin-left: 90%;
+    width: 150%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 
 .cart-icon-item-counter {
   position: absolute;
   font-weight: bold;
-  left: 18px;
+  left: 23px;
   top: -9px;
+
 }
 
 svg {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
 }

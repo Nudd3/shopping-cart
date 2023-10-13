@@ -2,23 +2,25 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import helperMethods from './utils/utils'
 import Header from './components/Header';
-
+import ProductList from './components/ProductList';
 function App() {
 
-  const [storeItems, setStoreItems] = useState();
+  const [storeItems, setStoreItems] = useState([]);
 
-  const initStore = async () => {
-    await helperMethods.loadDataFromApi();
-  }
+  
 
   useEffect(() => {
-    setStoreItems(initStore())
-  }, [])
+    (async () => {
+      const users = await helperMethods.loadDataFromApi();
+      setStoreItems(users);
+    })();
+
+  }, []);
 
   return (
     <>
       <Header />
-      <h1>Hello from app</h1>
+      <ProductList storeItems={storeItems} />
     </>
   )
 }

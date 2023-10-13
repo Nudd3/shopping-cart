@@ -6,6 +6,7 @@ const helperMethods = {
       const res = await fetch(url + `${i}`, { mode: 'cors' });
       const data = await res.json();
       items.push({
+        id: data.id,
         title: data.title,
         description: data.description,
         price: data.price,
@@ -15,7 +16,12 @@ const helperMethods = {
     return items;
   },
 
-  formatTitle: () => {}
+  formatTitle: (title) => {
+    return title.length > 20 ? title.slice(0, 20) : title;
+  },
+  formatDescription: (text) => {
+    return text.length > 200 ? text.slice(0, 200) : text;
+  },
 };
 
 export default helperMethods;
