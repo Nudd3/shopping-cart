@@ -30,7 +30,7 @@ const Product = ({ item }) => {
           ) : (
             <div className='product-info-footer-button multiple'>
               <button>-</button>
-              <span>{t}</span>
+              <div><span>{t}</span></div>
               <button>+</button>
             </div>
           )}

@@ -43,21 +43,41 @@
   align-items: center;
 
   &-button {
+    width: 25 0px;
+    height: 60px;
+    width: 250px;
     button {
+      height: 100%;
+      width: 100%;
       border-radius: 8px;
       border: 1px solid red;
       background-color: #eee;
-      font-size: 1.2em;
-      padding: 1em 3.5em;
+      // font-size: 1.2em;
+      // padding: 1em 3.5em;
       color: red;
       cursor: pointer;
+      width: 100%
     }
   }
 
   .multiple {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+
+
+    button {
+      flex: 1;
+      font-size: 1.5em;
+    }
+
+    div {
+      flex: 1;
+      text-align: center;
+      span {
+        font-size: 1.5em;
+      }
+    }
   }
 
   &-price {
