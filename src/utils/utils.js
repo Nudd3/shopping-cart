@@ -20,7 +20,16 @@ const helperMethods = {
     return title.length > 20 ? title.slice(0, 20) : title;
   },
   formatDescription: (text) => {
-    return text.length > 200 ? text.slice(0, 200) : text;
+
+    if (text.lenght < 300) return text;
+
+    if (!text.includes('.')) return text.slice(0, 300) + ' ...';
+
+    for(let i = 300; i > 0; i--) {
+      if (text[i] === '.') {
+        return text.slice(0, i+1);
+      }
+    }
   },
 };
 
