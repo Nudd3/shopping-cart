@@ -44,15 +44,17 @@
 
   &-button {
     width: 25 0px;
-    height: 60px;
-    width: 250px;
+    height: 55px;
+    width: 230px;
     button {
       height: 100%;
       width: 100%;
       border-radius: 8px;
-      border: 1px solid red;
-      background-color: #eee;
-      // font-size: 1.2em;
+      border: none;
+
+      font-size: 1.2em;
+      font-weight: bold;
+      text-transform: uppercase;
       // padding: 1em 3.5em;
       color: red;
       cursor: pointer;
