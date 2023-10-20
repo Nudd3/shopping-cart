@@ -7,14 +7,18 @@ const Header = () => {
       <div className='header-title'>
         <h1>Magnation</h1>
       </div>
-      <nav className='navigation'>
+      <nav className="navigation">
+
         <input type="checkbox" className='toggle-menu'/>
-        <div className='hamburger'></div>
-        <ul className='menu'>
-          <li className='header-nav-list-item'><a href=''>About</a></li>
-          <li className='header-nav-list-item'><a href=''>Contact</a></li>
-          <li className='header-nav-list-item'><a href=''>Store</a></li>
+        <div className="hamburger"></div>
+
+        <ul className="menu">
+          <li><a href="">Store</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contact</a></li>
         </ul>
+
+        
       </nav>
       <CartIcon />
     </header>

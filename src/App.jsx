@@ -20,9 +20,9 @@ function App() {
   return (
     <>
       <Header />
-      <div className="content">
+      {/* <div className="content">
         <ProductList storeItems={storeItems} />
-      </div>
+      </div> */}
     </>
   )
 }
