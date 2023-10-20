@@ -19,8 +19,8 @@ const Header = () => {
         </ul>
 
         
-      </nav>
       <CartIcon />
+      </nav>
     </header>
   );
 };

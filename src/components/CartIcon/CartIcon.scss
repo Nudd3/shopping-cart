@@ -11,6 +11,11 @@
   &:hover {
     .cart-icon-item-counter {
       top: 13px;
+
+      @media (max-width: 767px) {
+        top: 9px;
+        font-size: 13px;
+      }
     }
   }
 }
@@ -38,4 +43,10 @@
 svg {
   height: 50px;
   width: 50px;
+
+  @media (max-width:767px){
+    height: 40px;
+    height: 40px;
+    color: black;
+  }
 }
