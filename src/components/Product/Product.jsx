@@ -6,8 +6,9 @@ import { ShopContext } from '../../App';
 
 const Product = ({ item }) => {
   const { id, title, description, price, image } = item;
-  
-  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity } = useContext(ShopContext);
+
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity } =
+    useContext(ShopContext);
   // Render nothing
   if (!item) return <div></div>;
 
@@ -29,13 +30,23 @@ const Product = ({ item }) => {
         <div className='product-info-footer'>
           {quantity === 0 ? (
             <div className='product-info-footer-button'>
-              <button onClick={() => increaseCartQuantity(id)}>Add to cart</button>
+              <button onClick={() => increaseCartQuantity(id)}>
+                Add to cart
+              </button>
             </div>
           ) : (
             <div className='product-info-footer-button multiple'>
               <button onClick={() => decreaseCartQuantity(id)}>-</button>
-              <div><span>{quantity}</span></div>
-              <button onClick={() => {increaseCartQuantity(id)}}>+</button>
+              <div>
+                <span>{quantity}</span>
+              </div>
+              <button
+                onClick={() => {
+                  increaseCartQuantity(id);
+                }}
+              >
+                +
+              </button>
             </div>
           )}
 
