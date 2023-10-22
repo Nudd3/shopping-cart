@@ -3,29 +3,22 @@
   padding-bottom: 50px;
   padding-top: 30px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 2em;
 }
 .product-display {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 30px;
+  // padding-left: 30px;
   img {
     height: 300px;
     width: 250px;
     object-fit: contain;
   }
-}
-
-.product-info {
-  flex: 1;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding-right: 30px;
 }
 
 .product-info-title {
@@ -35,6 +28,7 @@
 
 .product-info-description {
   font-size: 0.7em;
+  padding: 15px 0;
 }
 
 .product-info-footer {
@@ -45,7 +39,7 @@
   &-button {
     width: 25 0px;
     height: 55px;
-    width: 230px;
+    width: 200px;
     button {
       height: 100%;
       width: 100%;
@@ -83,6 +77,6 @@
   }
 
   &-price {
-    font-size: 1.7em;
+    font-size: 1.3em;
   }
 }

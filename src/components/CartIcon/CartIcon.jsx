@@ -1,6 +1,11 @@
 import './CartIcon.scss';
+import { useContext } from 'react';
+import { ShopContext } from '../../App';
 
 const CartIcon = () => {
+
+  const { cartQuantity } = useContext(ShopContext);
+
   return (
     <div className="cart-icon">
       <svg
@@ -39,7 +44,7 @@ const CartIcon = () => {
           strokeWidth='2'
         />
       </svg>
-      <span className='cart-icon-item-counter'>0</span>
+      <span className='cart-icon-item-counter'>{cartQuantity}</span>
     </div>
   );
 };

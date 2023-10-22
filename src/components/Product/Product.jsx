@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types';
 import './Product.scss';
 import helperMethods from '../../utils/utils';
+import { useContext } from 'react';
+import { ShopContext } from '../../App';
 
 const Product = ({ item }) => {
   const { id, title, description, price, image } = item;
-
+  
+  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity } = useContext(ShopContext);
   // Render nothing
   if (!item) return <div></div>;
 
-  const t = 1;
+  const quantity = getItemQuantity(id);
+  console.log(quantity);
 
   return (
     <div className='product'>
@@ -23,15 +27,15 @@ const Product = ({ item }) => {
           <h2>{helperMethods.formatDescription(description)}</h2>
         </div>
         <div className='product-info-footer'>
-          {t === 0 ? (
+          {quantity === 0 ? (
             <div className='product-info-footer-button'>
-              <button>Add to cart</button>
+              <button onClick={() => increaseCartQuantity(id)}>Add to cart</button>
             </div>
           ) : (
             <div className='product-info-footer-button multiple'>
-              <button>-</button>
-              <div><span>{t}</span></div>
-              <button>+</button>
+              <button onClick={() => decreaseCartQuantity(id)}>-</button>
+              <div><span>{quantity}</span></div>
+              <button onClick={() => {increaseCartQuantity(id)}}>+</button>
             </div>
           )}
 
