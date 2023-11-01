@@ -1,15 +1,18 @@
+
+
 .shopping-cart-background {
   position: fixed;
   top: 70px;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-  // background-color: rgba(18, 18, 18, 0.442);
+  left: -100%;
+  background-color: rgba(18, 18, 18, 0.442);
+  transition: all 300ms ease-in-out;
 
   .shopping-cart {
     position: fixed;
     // top: 80px;
-    right: 0;
     width: 200px;
     // width: 0;
     height: 500px;
@@ -25,8 +28,10 @@
   .shopping-cart.shopping-cart-open {
     right: 0;
   }
+}
 
-
+.shopping-cart-background.shopping-cart-background-cover {
+  left: 0;
 }
 
 .shopping-cart-title {

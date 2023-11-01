@@ -13,7 +13,7 @@ function App() {
   // All items in the cart
   const [cartItems, setCartItems] = useState([]);
 
-  const [cartIsOpen, setCartIsOpen] = useState(true);
+  const [cartIsOpen, setCartIsOpen] = useState(false);
 
   // Total number of items in cart
   const cartQuantity = cartItems.reduce(
