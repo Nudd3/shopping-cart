@@ -4,7 +4,7 @@ import { ShopContext } from '../../App';
 
 const ShoppingCart = () => {
 
-  const {cartIsOpen} = useContext(ShopContext);
+  const {cartIsOpen, cartItems} = useContext(ShopContext);
 
   const mainClass = cartIsOpen ? 'shopping-cart shopping-cart-open' : 'shopping-cart'
   const background = cartIsOpen 

@@ -1,10 +1,16 @@
 const sort = {
 
-  by: () => {},
+  by: (method, items) => {
+    return sort[method](items);
+  },
 
-  name: () => {},
+  name: (items) => {
 
-  price: () => {}
+  },
+
+  price: (items) => {
+
+  }
 }
 
 export default sort;
