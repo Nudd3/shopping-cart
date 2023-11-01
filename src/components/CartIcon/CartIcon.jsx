@@ -4,10 +4,10 @@ import { ShopContext } from '../../App';
 
 const CartIcon = () => {
 
-  const { cartQuantity } = useContext(ShopContext);
+  const { cartQuantity, toggleCart, cartIsOpen } = useContext(ShopContext);
 
   return (
-    <div className="cart-icon">
+    <div className="cart-icon" onClick={toggleCart}>
       <svg
         width='800px'
         height='800px'
@@ -44,7 +44,7 @@ const CartIcon = () => {
           strokeWidth='2'
         />
       </svg>
-      <span className='cart-icon-item-counter'>{cartQuantity}</span>
+      <span className={cartIsOpen ? 'cart-icon-item-counter cart-open' : 'cart-icon-item-counter'}  >{cartQuantity}</span>
     </div>
   );
 };

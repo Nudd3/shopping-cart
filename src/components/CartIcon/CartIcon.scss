@@ -6,19 +6,24 @@
   z-index: 4;
 
   .cart-icon-item-counter {
-    transition: top 0.5s ease-in-out;
+    transition: top 0.3s ease-in-out;
   }
 
-  &:hover {
-    .cart-icon-item-counter {
-      top: 13px;
-
-      @media (max-width: 767px) {
-        top: 9px;
-        font-size: 13px;
-      }
-    }
+  .cart-icon-item-counter.cart-open{
+    top: 10.5px;
+    font-size: 13px;
   }
+
+  // &:hover {
+  //   .cart-icon-item-counter {
+  //     top: 13px;
+
+  //     @media (max-width: 767px) {
+  //       top: 9px;
+  //       font-size: 13px;
+  //     }
+  //   }
+  // }
 }
 
 @keyframes slide-in {
