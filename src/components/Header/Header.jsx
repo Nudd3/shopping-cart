@@ -1,7 +1,12 @@
 import './Header.scss';
 import CartIcon from '../CartIcon';
+import { useContext } from 'react';
+import ShoppingCart from '../ShoppingCart/ShoppingCart';
 
 const Header = () => {
+  
+  
+
   return (
     <header className='header'>
       <div className='header-title'>
