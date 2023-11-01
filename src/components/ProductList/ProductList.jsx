@@ -8,8 +8,8 @@ const ProductList = ({ storeItems }) => {
       <div className="toolbar">
         <ul>
           <li>Sort by: </li>
-          <li>Name</li>
-          <li>Price</li>
+          <li className='sort-select'>Name</li>
+          <li className='sort-select'>Price</li>
         </ul>
       </div>
       <div className='product-list'>

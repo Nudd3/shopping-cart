@@ -3,6 +3,7 @@ import './App.css';
 import helperMethods from './utils/utils';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
+import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 
 export const ShopContext = createContext(null);
 
@@ -11,6 +12,8 @@ function App() {
   const [storeItems, setStoreItems] = useState([]);
   // All items in the cart
   const [cartItems, setCartItems] = useState([]);
+
+  const [cartIsOpen, setCartIsOpen] = useState(true);
 
   // Total number of items in cart
   const cartQuantity = cartItems.reduce(
@@ -71,6 +74,10 @@ function App() {
     })();
   }, []);
 
+  const toggleCart = () => {
+    setCartIsOpen(!cartIsOpen);
+  }
+
   return (
     <>
       <ShopContext.Provider
@@ -80,13 +87,16 @@ function App() {
           getItemQuantity,
           increaseCartQuantity,
           decreaseCartQuantity,
-          removeFromCart
+          removeFromCart,
+          toggleCart,
+          cartIsOpen
         }}
       >
-        <Header />
+        <Header toggleCart={toggleCart} />
         <div className='content'>
           <ProductList storeItems={storeItems} />
         </div>
+        <ShoppingCart />
       </ShopContext.Provider>
     </>
   );

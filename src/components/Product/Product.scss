@@ -49,10 +49,10 @@
       font-size: 1.2em;
       font-weight: bold;
       text-transform: uppercase;
-      // padding: 1em 3.5em;
-      color: red;
       cursor: pointer;
       width: 100%;
+      color: white;
+      background: #4527a0;
     }
   }
 
@@ -71,6 +71,7 @@
       text-align: center;
       span {
         font-size: 1.5em;
+        font-weight: bold;
       }
     }
   }
