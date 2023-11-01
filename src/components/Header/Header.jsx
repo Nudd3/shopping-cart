@@ -4,8 +4,6 @@ import { useContext } from 'react';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
 
 const Header = () => {
-  
-  
 
   return (
     <header className='header'>
