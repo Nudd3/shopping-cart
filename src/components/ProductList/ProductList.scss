@@ -1,5 +1,6 @@
+@import '../../global.scss';
 .toolbar {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $black-color;
   margin: 80px 15px 0;
   ul {
     list-style: none;

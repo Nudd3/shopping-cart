@@ -1,3 +1,5 @@
+import helperMethods from './utils';
+
 const sort = {
 
   by: (method, items) => {
@@ -5,11 +7,14 @@ const sort = {
   },
 
   name: (items) => {
+    console.log('name sort')
+    console.log(items);
 
   },
 
   price: (items) => {
-
+    console.log('price sort')
+    console.log(items);
   }
 }
 

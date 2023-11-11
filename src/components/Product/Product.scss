@@ -1,5 +1,6 @@
+@import '../../global.scss';
 .product {
-  border-bottom: 2px dotted #343536;
+  border-bottom: 2px dotted $black-color;
   padding-bottom: 50px;
   padding-top: 30px;
   display: flex;
@@ -51,8 +52,8 @@
       text-transform: uppercase;
       cursor: pointer;
       width: 100%;
-      color: white;
-      background: #4527a0;
+      color: $white-color;
+      background: $purple-color;
     }
   }
 

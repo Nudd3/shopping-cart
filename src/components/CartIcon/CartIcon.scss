@@ -1,3 +1,4 @@
+@import '../../global.scss';
 .cart-icon {
   // border: 2px solid red;
   position: relative;
@@ -53,6 +54,6 @@ svg {
   @media (max-width:767px){
     height: 40px;
     height: 40px;
-    color: black;
+    color: $black-color;
   }
 }
