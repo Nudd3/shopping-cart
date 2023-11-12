@@ -3,20 +3,20 @@ import Product from '../Product/Product';
 import './ProductList.scss';
 import sort from '../../utils/sorting';
 import { useState, useReducer } from 'react';
-const ProductList = ({storeItems, setStoreItems}) => {
-
+const ProductList = ({ storeItems, setStoreItems }) => {
   const [sortMethod, setSortMethod] = useState(null);
-  const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+  const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
 
   const handleSort = (method) => {
+    if (method === 'reset' && sortMethod === 'reset') return;
     setSortMethod(method);
     if (method === sortMethod) {
-      setStoreItems(storeItems.reverse())
+      setStoreItems(storeItems.reverse());
       forceUpdate();
     } else {
       setStoreItems(sort.by(method, storeItems));
     }
-  }
+  };
 
   return (
     <div className='product-list'>
@@ -24,16 +24,27 @@ const ProductList = ({storeItems, setStoreItems}) => {
         <ul>
           <li>Sort by: </li>
           <li
-            className={sortMethod == 'title' ? 'sort-select selected' : 'sort-select'}
+            className={
+              sortMethod == 'title' ? 'sort-select selected' : 'sort-select'
+            }
             onClick={() => handleSort('title')}
           >
-            Title
+            Name
           </li>
           <li
-            className={sortMethod == 'price' ? 'sort-select selected' : 'sort-select'}
+            className={
+              sortMethod == 'price' ? 'sort-select selected' : 'sort-select'
+            }
             onClick={() => handleSort('price')}
-            >
-              Price</li>
+          >
+            Price
+          </li>
+          <li
+            className='sort-select'
+            onClick={() => handleSort('reset')}
+          >
+            Reset
+          </li>
         </ul>
       </div>
       <div className='product-list'>
