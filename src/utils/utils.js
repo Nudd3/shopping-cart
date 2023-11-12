@@ -17,7 +17,19 @@ const helperMethods = {
   },
 
   formatTitle: (title) => {
-    return title.length > 20 ? title.slice(0, 20) : title;
+    let lastIndex = 21;
+    for(let i = 0; i < 20; i++) {
+      if (title[i] === '.') {
+        lastIndex = i;
+      } else if (title[i] === ' ') {
+        lastIndex = i;
+      }
+    }
+    return title.length > 20 ? title.slice(0, lastIndex).trim() : title;
+    // if ( newTitle[newTitle.length - 1] === '-') {
+    //   newTitle[newTitle.length -1] = '';
+    // }
+    // return newTitle.trim();
   },
   formatDescription: (text) => {
 
