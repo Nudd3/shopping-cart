@@ -9,41 +9,93 @@
   left: -100%;
   background-color: rgba(18, 18, 18, 0.442);
   transition: all 300ms ease-in-out;
+  z-index: 1;
 
   .shopping-cart {
     position: fixed;
     // top: 80px;
-    width: 200px;
+    min-width: 350px;
     // width: 0;
     // height: 500px;
     height: 100%;
     background-color: $white-color;
     // animation: cart-slide-enter 0.4s ease-in-out;
     transition: all 300ms ease-in-out;
-    box-shadow: -4px 1px 5px -2px rgba(0,0,0,0.77);
--webkit-box-shadow: -4px 1px 5px -2px rgba(0,0,0,0.77);
--moz-box-shadow: -4px 1px 5px -2px rgba(0,0,0,0.77);
-box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
-    right: -250px;
+    box-shadow: -4px 1px 5px -2px rgba(0, 0, 0, 0.77);
+    -webkit-box-shadow: -4px 1px 5px -2px rgba(0, 0, 0, 0.77);
+    -moz-box-shadow: -4px 1px 5px -2px rgba(0, 0, 0, 0.77);
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
+    right: -400px;
   }
-
-  .shopping-cart.shopping-cart-open {
-    right: 0;
-  }
+}
+.shopping-cart.shopping-cart-open {
+  z-index: 2;
+  right: 0;
 }
 
 .shopping-cart-background.shopping-cart-background-cover {
   left: 0;
 }
 
+.shopping-cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+}
+
 .shopping-cart-title {
-  font-size: 1.2em;
+  font-size: 1.3em;
   text-align: center;
   // padding-top: 15px;
   padding: 15px 10px 0;
   margin-left: 10px;
   margin-right: 10px;
-  border-bottom: 2px solid $purple-color;
+  border-bottom: 2px solid $red-color;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.shopping-cart-body {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 10px;
+}
+
+.shopping-cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  &-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  &-title {
+    flex: 5;
+    font-size: 15px;
+    padding-left: 20px;
+  }
+
+  &-quantity {
+    font-size: 20px;
+    flex: 1;
+    text-align: center;
+  }
+
+
+  &-trashcan {
+    flex: 1;
+    width: 25px;
+    height: 25px;
+  }
 }
