@@ -94,7 +94,7 @@ function App() {
       >
         <Header toggleCart={toggleCart} />
         <div className='content background'>
-          <ProductList storeItems={storeItems} />
+          <ProductList storeItems={storeItems} setStoreItems={setStoreItems} />
           {/* <svg
             xmlns='http://www.w3.org/2000/svg'
             version='1.1'

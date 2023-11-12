@@ -2,7 +2,21 @@ import PropTypes from 'prop-types';
 import Product from '../Product/Product';
 import './ProductList.scss';
 import sort from '../../utils/sorting';
-const ProductList = ({storeItems}) => {
+import { useState, useReducer } from 'react';
+const ProductList = ({storeItems, setStoreItems}) => {
+
+  const [sortMethod, setSortMethod] = useState(null);
+  const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+
+  const handleSort = (method) => {
+    setSortMethod(method);
+    if (method === sortMethod) {
+      setStoreItems(storeItems.reverse())
+      forceUpdate();
+    } else {
+      setStoreItems(sort.by(method, storeItems));
+    }
+  }
 
   return (
     <div className='product-list'>
@@ -10,14 +24,14 @@ const ProductList = ({storeItems}) => {
         <ul>
           <li>Sort by: </li>
           <li
-            className='sort-select'
-            onClick={() => sort.by('name', storeItems)}
+            className={sortMethod == 'title' ? 'sort-select selected' : 'sort-select'}
+            onClick={() => handleSort('title')}
           >
-            Name
+            Title
           </li>
           <li
-            className='sort-select'
-            onClick={() => sort.by('price', storeItems)}
+            className={sortMethod == 'price' ? 'sort-select selected' : 'sort-select'}
+            onClick={() => handleSort('price')}
             >
               Price</li>
         </ul>
@@ -33,6 +47,7 @@ const ProductList = ({storeItems}) => {
 
 ProductList.propTypes = {
   storeItems: PropTypes.array,
+  setStoreItems: PropTypes.func,
 };
 
 export default ProductList;

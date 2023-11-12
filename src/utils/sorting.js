@@ -1,20 +1,21 @@
-import helperMethods from './utils';
-
 const sort = {
 
   by: (method, items) => {
-    return sort[method](items);
+    const newOrder =  items.sort(sort[method]);
+    return newOrder;
   },
 
-  name: (items) => {
-    console.log('name sort')
-    console.log(items);
+  title: (a, b) => {
+    if (a.title < b.title) return -1;
+    if (a.title > b.title) return 1;
+    return 0;
 
   },
 
-  price: (items) => {
-    console.log('price sort')
-    console.log(items);
+  price: (a, b) => {
+    if (a.price < b.price) return -1;
+    if (a.price > b.price) return 1;
+    return 0;
   }
 }
 

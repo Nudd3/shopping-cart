@@ -13,7 +13,6 @@ const Product = ({ item }) => {
   if (!item) return <div></div>;
 
   const quantity = getItemQuantity(id);
-  console.log(quantity);
 
   return (
     <div className='product'>

@@ -18,6 +18,10 @@
   font-weight: 700;
 }
 
+.selected {
+  text-decoration: underline;
+}
+
 .product-list {
   display: flex;
   flex-direction: column;
