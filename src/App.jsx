@@ -90,6 +90,7 @@ function App() {
           removeFromCart,
           toggleCart,
           cartIsOpen,
+          storeItems
         }}
       >
         <Header toggleCart={toggleCart} />
@@ -122,20 +123,6 @@ function App() {
         </div>
         <ShoppingCart />
       </ShopContext.Provider>
-      {/* <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div>
-      <div className='firefly'></div> */}
     </>
   );
 }
