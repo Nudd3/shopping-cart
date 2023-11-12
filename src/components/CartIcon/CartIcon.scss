@@ -13,6 +13,8 @@
   .cart-icon-item-counter.cart-open{
     top: 10.5px;
     font-size: 13px;
+    color: transparent;
+    transition: all 0.3s ease-in-out;
   }
 
   // &:hover {
@@ -43,7 +45,7 @@
 .cart-icon-item-counter {
   position: absolute;
   font-weight: bold;
-  left: 23px;
+  left: 20px;
   top: -9px;
 }
 
