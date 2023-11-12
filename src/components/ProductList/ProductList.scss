@@ -1,25 +1,31 @@
 @import '../../global.scss';
 .toolbar {
-  border-bottom: 1px solid $black-color;
-  margin: 80px 15px 0;
+  // border-bottom: 1px solid $black-color;
+  margin: 90px 15px 0;
   ul {
     list-style: none;
     display: flex;
-
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    gap: 5px;
     li {
-      font-size: 15px;
       margin-right: 7px;
     }
   }
 }
 
 .sort-select {
-  font-size: 20px;
-  font-weight: 700;
+  border: 2px solid $red-color;
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 3px 8px;
 }
 
 .selected {
-  text-decoration: underline;
+  background-color: $red-color;
+  color: $white-color;
 }
 
 .product-list {

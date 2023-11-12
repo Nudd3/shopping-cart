@@ -1,7 +1,7 @@
 @import '../../global.scss';
 .product {
   border-bottom: 2px dotted $black-color;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
   padding-top: 30px;
   display: flex;
   flex-direction: column;
@@ -28,8 +28,60 @@
 }
 
 .product-info-description {
-  font-size: 0.7em;
-  padding: 15px 0;
+  // font-size: 1em;
+  padding: 15px 0 25px;
+  // height: 155px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-text {
+  $max-lines: 4;
+  $line-height: 1.4;
+
+  max-height: calc($max-lines * 1em * $line-height);
+  line-height: $line-height;
+
+  overflow: hidden;
+  position: relative;
+  
+  &:has(+ .expand-btn:not(:checked))::before {
+    content: '';
+    position: absolute;
+    height: calc(1em * $line-height);
+    width: 100%;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, white);
+  }
+
+  &:has(+ .expand-btn:checked) {
+    max-height: none;
+  }
+
+}
+.expand-btn {
+  appearance: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1em;
+  padding-top: 0.25em;
+  width: 100%;
+  color: $red-color;
+  font-weight: bold;
+  text-decoration: underline;
+
+  &::before {
+    content: 'Show more';
+  }
+
+  &:checked::before {
+    content: 'Hide';
+  }
 }
 
 .product-info-footer {
@@ -54,6 +106,7 @@
       width: 100%;
       color: $white-color;
       background: $purple-color;
+      background: $blue-color;
     }
   }
 

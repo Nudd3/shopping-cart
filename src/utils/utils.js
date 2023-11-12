@@ -21,15 +21,18 @@ const helperMethods = {
   },
   formatDescription: (text) => {
 
-    if (text.lenght < 300) return text;
+    // if (text.length < 250) return text;
 
-    if (!text.includes('.')) return text.slice(0, 300) + ' ...';
+    // if (!text.includes('.')) return text.slice(0, 250) + ' ...';
 
-    for(let i = 300; i > 0; i--) {
+    let lastIndex = 250;
+    for(let i = 0; i < 250; i++) {
       if (text[i] === '.') {
-        return text.slice(0, i+1);
+        lastIndex = i;
+        
       }
     }
+    return text.slice(0, lastIndex + 1);
   },
 };
 

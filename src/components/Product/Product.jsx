@@ -24,7 +24,9 @@ const Product = ({ item }) => {
           <h2>{helperMethods.formatTitle(title)}</h2>
         </div>
         <div className='product-info-description'>
-          <h2>{helperMethods.formatDescription(description)}</h2>
+          {/* <p>{helperMethods.formatDescription(description)}</p> */}
+          <p className='description-text'>{description}</p>
+          <input className='expand-btn' type="checkbox" />
         </div>
         <div className='product-info-footer'>
           {quantity === 0 ? (
