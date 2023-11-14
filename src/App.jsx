@@ -80,6 +80,14 @@ function App() {
     setCartIsOpen(!cartIsOpen);
   };
 
+  useEffect(() => {
+    if (cartIsOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  })
+
   return (
     <>
       <ShopContext.Provider
@@ -97,7 +105,7 @@ function App() {
         }}
       >
         <Header toggleCart={toggleCart} />
-        <div className='content background'>
+        <div className={cartIsOpen ? 'content background content-limit' : 'content background'}>
           <Outlet />
           {/* <ProductList storeItems={storeItems} setStoreItems={setStoreItems} /> */}
     
