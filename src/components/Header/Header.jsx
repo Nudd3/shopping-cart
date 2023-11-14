@@ -2,6 +2,7 @@ import './Header.scss';
 import CartIcon from '../CartIcon';
 import { useContext } from 'react';
 import ShoppingCart from '../ShoppingCart/ShoppingCart';
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -15,10 +16,12 @@ const Header = () => {
         <div className='hamburger'></div>
         <ul className='menu'>
           <li>
-            <a href=''>Store</a>
+            {/* <Link to="store">Profile page</Link> */}
+            <Link to="store">Store</Link>
           </li>
           <li>
-            <a href=''>About</a>
+            {/* <a href=''>About</a> */}
+            <Link to="/">Home</Link>
           </li>
           <li>
             <a href=''>Contact</a>

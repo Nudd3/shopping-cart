@@ -2,8 +2,12 @@ import PropTypes from 'prop-types';
 import Product from '../Product/Product';
 import './ProductList.scss';
 import sort from '../../utils/sorting';
-import { useState, useReducer } from 'react';
-const ProductList = ({ storeItems, setStoreItems }) => {
+import { useState, useReducer, useContext } from 'react';
+import { ShopContext } from '../../App';
+const ProductList = () => {
+  
+  const { storeItems, setStoreItems } = useContext(ShopContext)
+
   const [sortMethod, setSortMethod] = useState(null);
   const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
 

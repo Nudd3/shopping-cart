@@ -4,8 +4,10 @@ import helperMethods from './utils/utils';
 import Header from './components/Header';
 import ProductList from './components/ProductList';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
-
+import Home from './components/Home';
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 export const ShopContext = createContext(null);
+
 
 function App() {
   // All items in the store
@@ -90,12 +92,15 @@ function App() {
           removeFromCart,
           toggleCart,
           cartIsOpen,
-          storeItems
+          storeItems,
+          setStoreItems
         }}
       >
         <Header toggleCart={toggleCart} />
         <div className='content background'>
-          <ProductList storeItems={storeItems} setStoreItems={setStoreItems} />
+          <Outlet />
+          {/* <ProductList storeItems={storeItems} setStoreItems={setStoreItems} /> */}
+    
           {/* <svg
             xmlns='http://www.w3.org/2000/svg'
             version='1.1'
