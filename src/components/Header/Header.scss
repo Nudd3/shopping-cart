@@ -17,10 +17,12 @@
   z-index: 1;
 }
 
-.header-title {
+.header-title a{
   padding-left: 20px;
-  color: $black-color;
-  text-decoration: underline;
+  color: $red-color;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2.3em;
 }
 
 .navigation {

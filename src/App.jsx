@@ -2,12 +2,10 @@ import { useEffect, useState, createContext } from 'react';
 import './App.css';
 import helperMethods from './utils/utils';
 import Header from './components/Header';
-import ProductList from './components/ProductList';
-import ShoppingCart from './components/ShoppingCart/ShoppingCart';
-import Home from './components/Home';
-import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-export const ShopContext = createContext(null);
 
+import ShoppingCart from './components/ShoppingCart/ShoppingCart';
+import { Outlet } from 'react-router-dom';
+export const ShopContext = createContext(null);
 
 function App() {
   // All items in the store
@@ -86,7 +84,7 @@ function App() {
     } else {
       document.body.style.overflow = 'unset';
     }
-  })
+  });
 
   return (
     <>
@@ -101,14 +99,20 @@ function App() {
           toggleCart,
           cartIsOpen,
           storeItems,
-          setStoreItems
+          setStoreItems,
         }}
       >
         <Header toggleCart={toggleCart} />
-        <div className={cartIsOpen ? 'content background content-limit' : 'content background'}>
+        <div
+          className={
+            cartIsOpen
+              ? 'content background content-limit'
+              : 'content background'
+          }
+        >
           <Outlet />
           {/* <ProductList storeItems={storeItems} setStoreItems={setStoreItems} /> */}
-    
+
           {/* <svg
             xmlns='http://www.w3.org/2000/svg'
             version='1.1'
