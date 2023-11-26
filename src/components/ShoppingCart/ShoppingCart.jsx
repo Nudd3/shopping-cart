@@ -22,7 +22,13 @@ const ShoppingCart = () => {
           {helperMethods.formatTitle(itm.title)}
         </h2>
         <h2 className='shopping-cart-item-quantity'>{item.quantity}</h2>
-        <svg className="shopping-cart-item-trashcan" viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' onClick={() => removeFromCart(item.id)}>
+        <svg
+          className='shopping-cart-item-trashcan'
+          viewBox='0 0 24 24'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+          onClick={() => removeFromCart(item.id)}
+        >
           <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
           <g
             id='SVGRepo_tracerCarrier'
@@ -49,11 +55,19 @@ const ShoppingCart = () => {
     );
   };
 
+  const totalSum = cartItems.reduce((total, current) => {
+    const currentItemPrice =
+      storeItems.find((item) => item.id === current.id)?.price || 0;
+    const totalPrice = currentItemPrice * current.quantity;
+
+    return (total += totalPrice);
+  }, 0);
+
   return (
     <>
       <div className={background}>
         <div className={mainClass}>
-          <div className="shopping-cart-inner-container">
+          <div className='shopping-cart-inner-container'>
             <div className='shopping-cart-header'>
               <h1 className='shopping-cart-title'>In your cart</h1>
               <svg
@@ -81,6 +95,10 @@ const ShoppingCart = () => {
           </div>
           <div className='shopping-cart-body'>
             {cartItems.map((item) => renderCartItem(item))}
+          </div>
+          <div className='shopping-cart-footer'>
+            <h1 className='shopping-cart-title'>Total: </h1>
+            <h1 className='shopping-cart-price'>$ {(Math.round(totalSum * 100) / 100).toFixed(2)}</h1>
           </div>
         </div>
       </div>
