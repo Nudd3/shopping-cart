@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header className='header'>
       <div className='header-title'>
-        <Link to='/'>
+        <Link to='/' onClick={unCheck}>
           Magnation
         </Link>
       </div>
