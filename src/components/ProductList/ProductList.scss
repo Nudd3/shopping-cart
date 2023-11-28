@@ -2,6 +2,10 @@
 .toolbar {
   // border-bottom: 1px solid $black-color;
   margin: 90px 15px 0;
+
+  @media(min-width: 767px) {
+    margin: 110px 15px 0;
+  }
   ul {
     list-style: none;
     display: flex;
