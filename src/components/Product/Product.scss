@@ -8,6 +8,11 @@
   justify-content: center;
   align-items: center;
   gap: 2em;
+
+  @media(min-width: 1000px) {
+    flex-direction: row;
+    max-width: 1100px;
+  }
 }
 .product-display {
   flex: 1;
@@ -20,6 +25,10 @@
     width: 250px;
     object-fit: contain;
   }
+}
+
+.product-info {
+  flex: 1;
 }
 
 .product-info-title {
@@ -38,49 +47,58 @@
 }
 
 .description-text {
-  $max-lines: 4;
-  $line-height: 1.4;
 
-  max-height: calc($max-lines * 1em * $line-height);
-  line-height: $line-height;
-
-  overflow: hidden;
-  position: relative;
+  @media(max-width: 767px) {
+    $max-lines: 4;
+    $line-height: 1.4;
   
-  &:has(+ .expand-btn:not(:checked))::before {
-    content: '';
-    position: absolute;
-    height: calc(1em * $line-height);
-    width: 100%;
-    bottom: 0;
-    pointer-events: none;
-    background: linear-gradient(to bottom, transparent, white);
-  }
-
-  &:has(+ .expand-btn:checked) {
-    max-height: none;
+    max-height: calc($max-lines * 1em * $line-height);
+    line-height: $line-height;
+  
+    overflow: hidden;
+    position: relative;
+    
+    &:has(+ .expand-btn:not(:checked))::before {
+      content: '';
+      position: absolute;
+      height: calc(1em * $line-height);
+      width: 100%;
+      bottom: 0;
+      pointer-events: none;
+      background: linear-gradient(to bottom, transparent, white);
+    }
+  
+    &:has(+ .expand-btn:checked) {
+      max-height: none;
+    }
   }
 
 }
 .expand-btn {
-  appearance: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 1em;
-  padding-top: 0.25em;
-  width: 100%;
-  color: $red-color;
-  font-weight: bold;
-  text-decoration: underline;
 
-  &::before {
-    content: 'Show more';
-  }
+  display: none;
 
-  &:checked::before {
-    content: 'Hide';
+  @media(max-width: 767px) {
+    display: block;
+    appearance: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1em;
+    padding-top: 0.25em;
+    width: 100%;
+    color: $red-color;
+    font-weight: bold;
+    text-decoration: underline;
+  
+    &::before {
+      content: 'Show more';
+    }
+  
+    &:checked::before {
+      content: 'Hide';
+    }
   }
 }
 
