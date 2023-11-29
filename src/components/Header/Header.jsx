@@ -23,7 +23,7 @@ const Header = () => {
         </Link>
       </div>
       <nav className='navigation'>
-        <input type='checkbox' className='toggle-menu' checked={isChecked} onClick={toggleCheck}/>
+        <input type='checkbox' className='toggle-menu' checked={isChecked} onChange={toggleCheck}/>
         <div className='hamburger'></div>
         <ul className='menu'>
           <li onClick={unCheck} >
