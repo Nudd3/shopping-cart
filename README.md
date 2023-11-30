@@ -1,8 +1,25 @@
-# React + Vite
+# Shopping Cart Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
+This is a project where I've created an online store using HTML, CSS, and ReactJS. 
+It contains three pages, where "Home" and "Contact" can be seen more as fillers that I've included to give the site a more "real-world" feeling. 
+At the "Store" page is where the main stuff is happening. 
 
-Currently, two official plugins are available:
+The project is a part of [The Odin Project](https://theodinproject.com/). More precisely, the Full Stack JavaScript course. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Assets
+### Images
+The [background image](https://unsplash.com/photos/a-person-standing-on-top-of-a-cliff-207NEuFvjlg) used is from Unsplash, and the account [Neom](https://unsplash.com/@neom). 
+
+### Products
+I've used [FakeStoreAPI](https://fakestoreapi.com/) to get the products available. 
+
+## Technologies
+* HTML
+* CSS
+* JavaScript
+* ReactJS
+* React-router-dom
+
+## Me
+Too see what else I'm up to check out my [GitHub](https://github.com/Nudd3)
