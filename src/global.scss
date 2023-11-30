@@ -5,6 +5,22 @@ $black-color: #000;
 // mb black: #343536
 $blue-color: #51bfc9;
 $red-color: #e03838;
-@media(max-width: 700px){
 
+// bg
+.bg-settings {
+  aspect-ratio: 16/9;
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.bg-image {
+  background-image: url('../../assets/home_bg.svg');
+  background-image: url('../../assets/blob_bg.svg');
+  // background-image: url('../../assets/blob_bg_2.svg');
+  background-image: url('../../assets/bg.jpg');
+  overflow: hidden;
 }
