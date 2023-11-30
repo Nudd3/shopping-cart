@@ -1,11 +1,13 @@
 import './Header.scss';
 import CartIcon from '../CartIcon';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from 'react';
 
 const Header = () => {
 
   const [isChecked, setIsChecked] = useState(false);
+
+  const location = useLocation().pathname;
 
   const toggleCheck = () => {
     setIsChecked(!isChecked);
@@ -16,7 +18,7 @@ const Header = () => {
   }
 
   return (
-    <header className='header'>
+    <header className={location === '/store' ? 'header' : 'header header-transparent'}>
       <div className='header-title'>
         <Link to='/' onClick={unCheck}>
           Magnation
@@ -33,7 +35,7 @@ const Header = () => {
             <Link to="store">Store</Link>
           </li>
           <li onClick={unCheck} >
-          <Link to="contact">Contact</Link>
+          <Link to="about">About</Link>
           </li>
         </ul>
         <CartIcon />

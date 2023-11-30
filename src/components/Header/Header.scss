@@ -19,6 +19,10 @@
   @media (min-width: 767px){
     height: 90px;
   }
+
+  &-transparent {
+    background: transparent;
+  }
 }
 
 .header-title a{
