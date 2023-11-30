@@ -1,1 +1,48 @@
 @import '../../global.scss';
+
+.about {
+  padding-top: 150px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  overflow: hidden;
+
+  h1 {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.2em;
+    text-shadow: 1px 1px 1px;
+    margin-bottom: 1em;
+
+    @media (max-width: 767px) {
+      font-size: 2em;
+      line-height: normal;
+    }
+  }
+  p {
+    text-align: left;
+    max-width: 500px;
+    color: $black-color;
+    line-height: 20px;
+    letter-spacing: 1px;
+    font-size: 1em;
+
+    @media (max-width: 767px) {
+      max-width: 75%;
+      line-height: normal;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: $red-color;
+      text-decoration: none;
+    }
+  }
+}
