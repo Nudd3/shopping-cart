@@ -145,5 +145,7 @@
   }
 }
 .shopping-cart-inner-container {
-  // overflow-y: auto;
+  svg {
+    cursor: pointer;
+  }
 }
